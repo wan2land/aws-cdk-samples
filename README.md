@@ -4,3 +4,8 @@
   - aws-cdk (no global installation required)
   - typescript (server & infra both)
   - babel
+- [sample-express-app](./sample-express-app)
+  - aws-cdk (no global installation required)
+  - typescript (server & infra both)
+  - babel
+  - express (with aws-serverless-express)

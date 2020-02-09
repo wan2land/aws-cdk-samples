@@ -1,4 +1,4 @@
-# Sample REST Api
+# Sample Express App
 
 ## Installation
 
