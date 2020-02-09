@@ -1,4 +1,4 @@
-import { LambdaIntegration, RestApi } from '@aws-cdk/aws-apigateway'
+import { LambdaRestApi } from '@aws-cdk/aws-apigateway'
 import { Code, Function as LFunction, Runtime } from '@aws-cdk/aws-lambda'
 import { Construct, Stack, StackProps } from '@aws-cdk/core'
 import { join } from 'path'
@@ -9,16 +9,12 @@ export class ExpressStack extends Stack {
 
     const code = Code.fromAsset(join(__dirname, '../dist'))
 
-    const api = new RestApi(this, 'SampleRestApi', {
-      deployOptions: {
-        stageName: 'dev',
-      },
+    new LambdaRestApi(this, 'SampleExpress', {
+      handler: new LFunction(this, 'HomeHandler', {
+        runtime: Runtime.NODEJS_12_X,
+        code,
+        handler: 'entry.handler',
+      }),
     })
-
-    api.root.addMethod('GET', new LambdaIntegration(new LFunction(this, 'HomeHandler', {
-      runtime: Runtime.NODEJS_12_X,
-      code,
-      handler: 'entry.handler',
-    })))
   }
 }

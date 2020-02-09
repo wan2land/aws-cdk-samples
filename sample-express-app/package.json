@@ -2,12 +2,14 @@
   "private": true,
   "scripts": {
     "build": "npm run build:infra && npm run build:server",
-    "build:server": "babel ./src --out-dir ./dist --extensions \".ts\"",
+    "build:server": "babel ./src --out-dir ./src-dist --extensions \".ts\"",
     "build:infra": "babel ./infra --out-dir ./infra-dist --extensions \".ts\"",
-    "deploy": "cdk deploy"
+    "deploy": "npm run build && distize ./src-dist/* && cdk deploy"
   },
   "dependencies": {
-    "core-js": "^3.6.4"
+    "aws-serverless-express": "^3.3.6",
+    "core-js": "^3.6.4",
+    "express": "^4.17.1"
   },
   "devDependencies": {
     "@aws-cdk/aws-apigateway": "^1.21.1",
@@ -20,8 +22,10 @@
     "@babel/preset-env": "^7.8.3",
     "@babel/preset-typescript": "^7.8.3",
     "@types/aws-lambda": "^8.10.40",
+    "@types/aws-serverless-express": "^3.3.3",
     "@types/node": "^13.1.8",
     "aws-cdk": "^1.21.1",
+    "distize": "^1.1.0",
     "typescript": "^3.7.4"
   }
 }
