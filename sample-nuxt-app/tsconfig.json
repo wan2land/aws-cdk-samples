@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "pretty": true,
+    "strict": true,
+    "esModuleInterop": true,
+    "noImplicitReturns": true,
+    "outDir": "dist-infra"
+  },
+  "include": [
+    "infra/**/*"
+  ]
+}

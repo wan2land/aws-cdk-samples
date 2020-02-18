@@ -1,0 +1,29 @@
+{
+  "name": "sample-nuxt-app",
+  "version": "1.0.0",
+  "description": "My superior Nuxt.js project",
+  "author": "Changwan Jun",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "npm run build:infra && npm run build:nuxt",
+    "build:infra": "tsc",
+    "build:nuxt": "nuxt build",
+    "deploy": "npm run build && distize .nuxt handler.js nuxt.config.js && cdk deploy"
+  },
+  "dependencies": {
+    "nuxt-start": "^2.11.0",
+    "serverless-nuxt": "^1.1.1"
+  },
+  "devDependencies": {
+    "@aws-cdk/aws-apigateway": "^1.24.0",
+    "@aws-cdk/aws-certificatemanager": "^1.24.0",
+    "@aws-cdk/aws-lambda": "^1.24.0",
+    "@aws-cdk/core": "^1.24.0",
+    "@types/node": "^13.7.1",
+    "aws-cdk": "^1.24.0",
+    "distize": "^1.2.0",
+    "nuxt": "^2.11.0",
+    "typescript": "^3.7.5"
+  }
+}
