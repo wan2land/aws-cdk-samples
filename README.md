@@ -9,3 +9,9 @@
   - typescript (server & infra both)
   - babel
   - express (with aws-serverless-express)
+- [sample-nuxt-app](./sample-nuxt-app)
+  - aws-cdk (no global installation required)
+  - typescript (server & infra both)
+  - babel
+  - express (with aws-serverless-express)
+  - nuxt

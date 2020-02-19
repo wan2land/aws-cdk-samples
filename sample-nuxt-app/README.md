@@ -1,22 +1,18 @@
-# sample-nuxt-app
+# Sample Nuxt App
 
-> My superior Nuxt.js project
+## Installation
 
-## Build Setup
+Open `infra/nuxt-atack.ts`, Set your Domain and Certificate ARN.
 
-``` bash
-# install dependencies
-$ npm install
-
-# serve with hot reload at localhost:3000
-$ npm run dev
-
-# build for production and launch server
-$ npm run build
-$ npm run start
-
-# generate static project
-$ npm run generate
+```ts
+const DOMAIN_NAME = 'nuxtsample.dist.be'
+const CERTIFICATE_ARN = 'arn:aws:acm:us-east-1:056997058944:certificate/a6e9d9de-b01a-448d-b4fb-69254e1867de'
 ```
 
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+then,
+
+```bash
+npm install
+npx cdk bootstrap
+npm run build && npm run deploy
+```
