@@ -12,8 +12,7 @@
 - [sample-nuxt-app](./sample-nuxt-app)
   - aws-cdk (no global installation required)
   - typescript (infra only)
-  - express (with aws-serverless-express)
-  - nuxt
+  - nuxt (with express & aws-serverless-express)
 
 ## Postings
 
